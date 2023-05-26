@@ -10,4 +10,8 @@ class Solver
             result
         end
     end
+
+    def reverse(word)
+        word.reverse
+    end
 end
