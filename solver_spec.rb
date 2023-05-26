@@ -1,51 +1,45 @@
-require 'rspec'
+require_relative 'solver'
 
 describe Solver do
   before :each do
     @solver = Solver.new
   end
 
-  describe '#new' do
-    it 'returns a Solver object' do
-      expect(@solver).to be_an_instance_of Solver
+  context 'Test factorial behaviors' do
+    it 'raises an ArgumentError when number is negaitve' do
+      expect { @solver.factorial(-4) }.to raise_error(ArgumentError)
+    end
+
+    it 'return 1 when number is 0' do
+      expect(@solver.factorial(0)).to eq 1
+    end
+
+    it 'test for positive integer' do
+      expect(@solver.factorial(5)).to eq 120
     end
   end
 
-  describe '#factorial' do
-    it 'returns the factorial of the number' do
-      expect(@solver.factorial(4)).to eq(24)
-    end
-
-    it 'returns 1 if the factorial method argument is 0' do
-      expect(@solver.factorial(0)).to eq(1)
-    end
-
-    it 'raise an argument error' do
-      expect { @solver.factorial(-1) }.to raise_error(ArgumentError, 'Input must be a positive number!')
+  context 'Test for reverse word' do
+    it 'expect the world to be reversed' do
+      expect(@solver.reverse_word('shafiu')).to eq('uifahs')
     end
   end
 
-  describe '#reverse' do
-    it 'should reverse the word' do
-      expect(@solver.reverse('hello')).to eq('olleh')
-    end
-  end
-
-  describe '#fizzbuzz' do
-    it 'It should return fizzbuzz' do
-      expect(@solver.fizzbuzz(15)).to eq('fizzbuzz')
+  context 'Test for fizzbuzz' do
+    it 'returns "fizz" when number divisible by 3' do
+      expect(@solver.fizzbuzz(9)).to eq 'fizz'
     end
 
-    it 'should return fizz' do
-      expect(@solver.fizzbuzz(9)).to eq('fizz')
+    it 'returns "buzz" when number is divisible by 5' do
+      expect(@solver.fizzbuzz(20)).to eq 'buzz'
     end
 
-    it 'should return buzz' do
-      expect(@solver.fizzbuzz(10)).to eq('buzz')
+    it 'returns "fizzbuzz" when N is divisible by both 3 and 5' do
+      expect(@solver.fizzbuzz(15)).to eq 'fizzbuzz'
     end
 
-    it 'should return the number as a string' do
-      expect(@solver.fizzbuzz(7)).to eq('7')
+    it 'returns a string when number is any other case' do
+      expect(@solver.fizzbuzz(7)).to eq '7'
     end
   end
 end
