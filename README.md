@@ -27,7 +27,7 @@
 
 # 📖 [TDD] <a name="about-project"></a>
 
-**[TDD project]** is an app built with Ruby.
+**[TDD project]** provides collection classes with several traversal and searching methods.
 
 ## 🛠 Built With <a name="built-with"></a>
 
