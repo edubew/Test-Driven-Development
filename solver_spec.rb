@@ -30,3 +30,22 @@ it 'should reverse the word' do
     expect(@solver.reverse('hello')).to eq('olleh')
 end
 end
+
+describe '#fizzbuzz' do
+it 'It should return fizzbuzz' do
+    expect(@solver.fizzbuzz(15)).to eq('fizzbuzz')
+end
+
+it 'should return fizz' do
+    expect(@solver.fizzbuzz(9)).to eq('fizz')
+end
+
+it 'should return buzz' do
+    expect(@solver.fizzbuzz(10)).to eq('buzz')
+end
+
+it 'should return the number as a string' do
+    expect(@solver.fizzbuzz(7)).to eq('7')
+end
+end
+end
